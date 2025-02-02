@@ -3,16 +3,20 @@ import { LanguageToggle, type Language } from "@/components/LanguageToggle";
 import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { ProductCategory } from "@/components/ProductCategory";
+import { IndustrySection } from "@/components/IndustrySection";
+import { Testimonial } from "@/components/Testimonial";
+import { ContactForm } from "@/components/ContactForm";
 import { content } from "@/content/homepage";
 
 const Index = () => {
   const [language, setLanguage] = useState<Language>("en");
   const t = content[language];
+  const isRTL = language === "ar";
 
   return (
     <>
       <SEOHead language={language} />
-      <div className={`min-h-screen ${language === "ar" ? "font-arabic" : ""}`}>
+      <div className={`min-h-screen ${isRTL ? "font-arabic" : ""}`}>
         <LanguageToggle onLanguageChange={setLanguage} currentLanguage={language} />
         
         {/* Hero Section */}
@@ -59,6 +63,64 @@ const Index = () => {
                 />
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Industry Solutions Section */}
+        <section className="py-20 px-4 md:px-6 lg:px-8 bg-gray-50">
+          <div className="container mx-auto max-w-7xl">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-steel-500 mb-4">
+                {t.industries.title}
+              </h2>
+              <p className="text-xl text-steel-300">
+                {t.industries.subtitle}
+              </p>
+            </div>
+            <div className="space-y-8">
+              {t.industries.sections.map((section, index) => (
+                <IndustrySection
+                  key={index}
+                  {...section}
+                  rtl={isRTL}
+                  className={index % 2 === 0 ? "" : "bg-white"}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="py-20 px-4 md:px-6 lg:px-8 bg-white">
+          <div className="container mx-auto max-w-7xl">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-steel-500 mb-4">
+                {t.testimonials.title}
+              </h2>
+              <p className="text-xl text-steel-300">
+                {t.testimonials.subtitle}
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {t.testimonials.items.map((testimonial, index) => (
+                <Testimonial
+                  key={index}
+                  {...testimonial}
+                  rtl={isRTL}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Form Section */}
+        <section className="py-20 px-4 md:px-6 lg:px-8 bg-gray-50">
+          <div className="container mx-auto max-w-7xl">
+            <ContactForm
+              title={t.contact.title}
+              description={t.contact.description}
+              rtl={isRTL}
+            />
           </div>
         </section>
       </div>
