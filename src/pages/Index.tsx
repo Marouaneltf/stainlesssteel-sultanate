@@ -6,6 +6,7 @@ import { ProductCategory } from "@/components/ProductCategory";
 import { IndustrySection } from "@/components/IndustrySection";
 import { Testimonial } from "@/components/Testimonial";
 import { ContactForm } from "@/components/ContactForm";
+import { PopupManager } from "@/components/PopupManager";
 import { content } from "@/content/homepage";
 
 const Index = () => {
@@ -18,6 +19,7 @@ const Index = () => {
       <SEOHead language={language} />
       <div className={`min-h-screen ${isRTL ? "font-arabic" : ""}`}>
         <LanguageToggle onLanguageChange={setLanguage} currentLanguage={language} />
+        <PopupManager language={language} />
         
         {/* Hero Section */}
         <section className="relative bg-gradient-to-r from-steel-300 to-steel-400 py-20 px-4 md:px-6 lg:px-8">
@@ -41,7 +43,7 @@ const Index = () => {
             </div>
           </div>
         </section>
-
+        
         {/* Products Section */}
         <section className="py-20 px-4 md:px-6 lg:px-8 bg-white">
           <div className="container mx-auto max-w-7xl">
@@ -65,7 +67,7 @@ const Index = () => {
             </div>
           </div>
         </section>
-
+        
         {/* Industry Solutions Section */}
         <section className="py-20 px-4 md:px-6 lg:px-8 bg-gray-50">
           <div className="container mx-auto max-w-7xl">
@@ -89,7 +91,7 @@ const Index = () => {
             </div>
           </div>
         </section>
-
+        
         {/* Testimonials Section */}
         <section className="py-20 px-4 md:px-6 lg:px-8 bg-white">
           <div className="container mx-auto max-w-7xl">
@@ -112,7 +114,7 @@ const Index = () => {
             </div>
           </div>
         </section>
-
+        
         {/* Contact Form Section */}
         <section className="py-20 px-4 md:px-6 lg:px-8 bg-gray-50">
           <div className="container mx-auto max-w-7xl">
