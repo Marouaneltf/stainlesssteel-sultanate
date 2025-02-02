@@ -6,20 +6,24 @@ import { ProductCategory } from "@/components/ProductCategory";
 import { IndustrySection } from "@/components/IndustrySection";
 import { Testimonial } from "@/components/Testimonial";
 import { ContactForm } from "@/components/ContactForm";
-import { PopupManager } from "@/components/PopupManager";
+import { PopupContent } from "@/components/PopupContent";
 import { content } from "@/content/homepage";
 
 const Index = () => {
   const [language, setLanguage] = useState<Language>("en");
+  const [currentPopup, setCurrentPopup] = useState<string | null>(null);
   const t = content[language];
   const isRTL = language === "ar";
+
+  const handleSectionClick = (section: string) => {
+    setCurrentPopup(section);
+  };
 
   return (
     <>
       <SEOHead language={language} />
       <div className={`min-h-screen ${isRTL ? "font-arabic" : ""}`}>
         <LanguageToggle onLanguageChange={setLanguage} currentLanguage={language} />
-        <PopupManager language={language} />
         
         {/* Hero Section */}
         <section className="relative bg-gradient-to-r from-steel-300 to-steel-400 py-20 px-4 md:px-6 lg:px-8">
@@ -45,7 +49,10 @@ const Index = () => {
         </section>
         
         {/* Products Section */}
-        <section className="py-20 px-4 md:px-6 lg:px-8 bg-white">
+        <section 
+          className="py-20 px-4 md:px-6 lg:px-8 bg-white cursor-pointer"
+          onClick={() => handleSectionClick("products")}
+        >
           <div className="container mx-auto max-w-7xl">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-steel-500 mb-4">
@@ -69,7 +76,10 @@ const Index = () => {
         </section>
         
         {/* Industry Solutions Section */}
-        <section className="py-20 px-4 md:px-6 lg:px-8 bg-gray-50">
+        <section 
+          className="py-20 px-4 md:px-6 lg:px-8 bg-gray-50 cursor-pointer"
+          onClick={() => handleSectionClick("industries")}
+        >
           <div className="container mx-auto max-w-7xl">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-steel-500 mb-4">
@@ -93,7 +103,10 @@ const Index = () => {
         </section>
         
         {/* Testimonials Section */}
-        <section className="py-20 px-4 md:px-6 lg:px-8 bg-white">
+        <section 
+          className="py-20 px-4 md:px-6 lg:px-8 bg-white cursor-pointer"
+          onClick={() => handleSectionClick("testimonials")}
+        >
           <div className="container mx-auto max-w-7xl">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-steel-500 mb-4">
@@ -116,7 +129,10 @@ const Index = () => {
         </section>
         
         {/* Contact Form Section */}
-        <section className="py-20 px-4 md:px-6 lg:px-8 bg-gray-50">
+        <section 
+          className="py-20 px-4 md:px-6 lg:px-8 bg-gray-50 cursor-pointer"
+          onClick={() => handleSectionClick("contact")}
+        >
           <div className="container mx-auto max-w-7xl">
             <ContactForm
               title={t.contact.title}
@@ -125,6 +141,16 @@ const Index = () => {
             />
           </div>
         </section>
+
+        {/* Popups */}
+        {currentPopup && (
+          <PopupContent
+            isOpen={true}
+            onClose={() => setCurrentPopup(null)}
+            content={t[currentPopup].popup}
+            language={language}
+          />
+        )}
       </div>
     </>
   );
