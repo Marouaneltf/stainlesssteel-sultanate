@@ -30,19 +30,6 @@ export const content = {
           features: ["Modular design", "High load capacity", "Adjustable shelves", "Corrosion resistant"],
         },
       ],
-      popup: {
-        title: "Premium Stainless Steel Products Guide",
-        sections: [
-          {
-            heading: "Understanding Commercial Grade Stainless Steel",
-            content: "Commercial grade stainless steel is the foundation of professional kitchen equipment..."
-          },
-          {
-            heading: "Product Categories and Applications",
-            content: "Our comprehensive range of stainless steel solutions covers every aspect of commercial kitchen needs..."
-          }
-        ]
-      }
     },
     industries: {
       title: "Industry Solutions",
@@ -92,20 +79,7 @@ export const content = {
           ],
           imageUrl: "/placeholder.svg"
         }
-      ],
-      popup: {
-        title: "Industry-Specific Stainless Steel Solutions",
-        sections: [
-          {
-            heading: "Tailored Solutions for Every Industry",
-            content: "Each industry has unique requirements when it comes to stainless steel equipment..."
-          },
-          {
-            heading: "Industry Standards and Compliance",
-            content: "Our stainless steel solutions meet and exceed industry-specific standards..."
-          }
-        ]
-      }
+      ]
     },
     testimonials: {
       title: "Customer Success Stories",
@@ -129,37 +103,11 @@ export const content = {
           company: "Al-Omar Supermarkets",
           location: "Dammam"
         }
-      ],
-      popup: {
-        title: "Customer Success Stories and Case Studies",
-        sections: [
-          {
-            heading: "Real Results from Real Customers",
-            content: "Discover how our stainless steel solutions have transformed businesses across Saudi Arabia..."
-          },
-          {
-            heading: "Industry Impact and Recognition",
-            content: "Our commitment to quality has earned us recognition throughout the region..."
-          }
-        ]
-      }
+      ]
     },
     contact: {
       title: "Request a Quote",
-      description: "Get in touch with our team for custom stainless steel solutions tailored to your business needs.",
-      popup: {
-        title: "Get in Touch for Custom Stainless Steel Solutions",
-        sections: [
-          {
-            heading: "Custom Fabrication Process",
-            content: "Learn about our detailed approach to creating custom stainless steel solutions..."
-          },
-          {
-            heading: "Quality Assurance and Support",
-            content: "Our commitment to quality extends beyond the initial installation..."
-          }
-        ]
-      }
+      description: "Get in touch with our team for custom stainless steel solutions tailored to your business needs."
     }
   },
   ar: {
@@ -193,19 +141,6 @@ export const content = {
           features: ["تصميم معياري", "قدرة تحمل عالية", "رفوف قابلة للتعديل", "مقاومة للصدأ"],
         },
       ],
-      popup: {
-        title: "دليل منتجات الستانلس ستيل المتميزة",
-        sections: [
-          {
-            heading: "فهم الستانلس ستيل التجاري",
-            content: "الستانلس ستيل التجاري هو أساس معدات المطبخ المهنية..."
-          },
-          {
-            heading: "فئات المنتجات وتطبيقاتها",
-            content: "تغطي مجموعتنا الشاملة من حلول الستانلس ستيل كل جوانب احتياجات المطبخ التجاري..."
-          }
-        ]
-      }
     },
     industries: {
       title: "حلول صناعية",
@@ -255,20 +190,7 @@ export const content = {
           ],
           imageUrl: "/placeholder.svg"
         }
-      ],
-      popup: {
-        title: "حلول الستانلس ستيل المخصصة للصناعات",
-        sections: [
-          {
-            heading: "حلول مخصصة لكل صناعة",
-            content: "لكل صناعة متطلباتها الفريدة عندما يتعلق الأمر بمعدات الستانلس ستيل..."
-          },
-          {
-            heading: "معايير الصناعة والامتثال",
-            content: "تلبي حلول الستانلس ستيل لدينا وتتجاوز معايير الصناعة المحددة..."
-          }
-        ]
-      }
+      ]
     },
     testimonials: {
       title: "قصص نجاح عملائنا",
@@ -292,37 +214,11 @@ export const content = {
           company: "سوبرماركت العمر",
           location: "الدمام"
         }
-      ],
-      popup: {
-        title: "قصص نجاح العملاء ودراسات الحالة",
-        sections: [
-          {
-            heading: "نتائج حقيقية من عملاء حقيقيين",
-            content: "اكتشف كيف غيرت حلول الستانلس ستيل لدينا الأعمال في جميع أنحاء المملكة العربية السعودية..."
-          },
-          {
-            heading: "التأثير في الصناعة والتقدير",
-            content: "كسب التزامنا بالجودة تقديراً في جميع أنحاء المنطقة..."
-          }
-        ]
-      }
+      ]
     },
     contact: {
       title: "اطلب عرض سعر",
-      description: "تواصل مع فريقنا للحصول على حلول ستانلس ستيل مخصصة تناسب احتياجات عملك.",
-      popup: {
-        title: "تواصل معنا للحصول على حلول الستانلس ستيل المخصصة",
-        sections: [
-          {
-            heading: "عملية التصنيع المخصص",
-            content: "تعرف على نهجنا التفصيلي في إنشاء حلول الستانلس ستيل المخصصة..."
-          },
-          {
-            heading: "ضمان الجودة والدعم",
-            content: "يمتد التزامنا بالجودة إلى ما بعد التركيب الأولي..."
-          }
-        ]
-      }
+      description: "تواصل مع فريقنا للحصول على حلول ستانلس ستيل مخصصة تناسب احتياجات عملك."
     }
   }
 };
