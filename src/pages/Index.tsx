@@ -2,57 +2,8 @@ import { useState } from "react";
 import { LanguageToggle, type Language } from "@/components/LanguageToggle";
 import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
-
-const content = {
-  en: {
-    hero: {
-      title: "Premium Stainless Steel Solutions",
-      subtitle: "For Commercial Kitchens & Industrial Facilities",
-      cta: "Request a Quote",
-    },
-    products: {
-      title: "Our Products",
-      items: [
-        {
-          title: "Commercial Tables",
-          description: "Heavy-duty stainless steel tables built for professional kitchens",
-        },
-        {
-          title: "Industrial Refrigerators",
-          description: "High-capacity cooling solutions for restaurants and hotels",
-        },
-        {
-          title: "Storage Solutions",
-          description: "Custom closets and shelving systems for optimal organization",
-        },
-      ],
-    },
-  },
-  ar: {
-    hero: {
-      title: "حلول ستانلس ستيل متميزة",
-      subtitle: "للمطابخ التجارية والمنشآت الصناعية",
-      cta: "اطلب عرض سعر",
-    },
-    products: {
-      title: "منتجاتنا",
-      items: [
-        {
-          title: "طاولات تجارية",
-          description: "طاولات ستانلس ستيل متينة مصممة للمطابخ المهنية",
-        },
-        {
-          title: "ثلاجات صناعية",
-          description: "حلول تبريد عالية السعة للمطاعم والفنادق",
-        },
-        {
-          title: "حلول التخزين",
-          description: "خزائن ورفوف مخصصة للتنظيم الأمثل",
-        },
-      ],
-    },
-  },
-};
+import { ProductCategory } from "@/components/ProductCategory";
+import { content } from "@/content/homepage";
 
 const Index = () => {
   const [language, setLanguage] = useState<Language>("en");
@@ -61,32 +12,53 @@ const Index = () => {
   return (
     <>
       <SEOHead language={language} />
-      <div className={`min-h-screen bg-gradient-to-r from-steel-300 to-steel-400 ${language === "ar" ? "font-arabic" : ""}`}>
+      <div className={`min-h-screen ${language === "ar" ? "font-arabic" : ""}`}>
         <LanguageToggle onLanguageChange={setLanguage} currentLanguage={language} />
         
         {/* Hero Section */}
-        <section className="container mx-auto px-4 py-20 text-white text-center animate-fadeIn">
-          <h1 className="text-5xl font-bold mb-4">{t.hero.title}</h1>
-          <p className="text-xl mb-8">{t.hero.subtitle}</p>
-          <Button size="lg" className="bg-steel-500 hover:bg-steel-400 text-white">
-            {t.hero.cta}
-          </Button>
+        <section className="relative bg-gradient-to-r from-steel-300 to-steel-400 py-20 px-4 md:px-6 lg:px-8">
+          <div className="container mx-auto max-w-7xl">
+            <div className="text-center text-white space-y-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fadeIn">
+                {t.hero.title}
+              </h1>
+              <p className="text-xl md:text-2xl font-medium">
+                {t.hero.subtitle}
+              </p>
+              <p className="text-lg max-w-3xl mx-auto opacity-90">
+                {t.hero.description}
+              </p>
+              <Button 
+                size="lg" 
+                className="bg-steel-500 hover:bg-steel-400 text-white mt-8"
+              >
+                {t.hero.cta}
+              </Button>
+            </div>
+          </div>
         </section>
 
         {/* Products Section */}
-        <section className="container mx-auto px-4 py-20 bg-white rounded-t-3xl">
-          <h2 className="text-4xl font-bold text-center mb-12 text-steel-500">
-            {t.products.title}
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {t.products.items.map((item, index) => (
-              <div key={index} className="bg-steel-50 p-6 rounded-lg shadow-lg">
-                <h3 className="text-2xl font-semibold mb-4 text-steel-400">
-                  {item.title}
-                </h3>
-                <p className="text-steel-300">{item.description}</p>
-              </div>
-            ))}
+        <section className="py-20 px-4 md:px-6 lg:px-8 bg-white">
+          <div className="container mx-auto max-w-7xl">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-steel-500 mb-4">
+                {t.products.title}
+              </h2>
+              <p className="text-xl text-steel-300">
+                {t.products.subtitle}
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {t.products.categories.map((category, index) => (
+                <ProductCategory
+                  key={index}
+                  title={category.title}
+                  description={category.description}
+                  features={category.features}
+                />
+              ))}
+            </div>
           </div>
         </section>
       </div>
