@@ -59,9 +59,8 @@ const Index = () => {
               {t.products.categories.map((category, index) => (
                 <ProductCategory
                   key={index}
-                  title={category.title}
-                  description={category.description}
-                  features={category.features}
+                  {...category}
+                  rtl={isRTL}
                 />
               ))}
             </div>
