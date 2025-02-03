@@ -10,7 +10,7 @@ import { PopupManager } from "@/components/PopupManager";
 import { content } from "@/content/homepage";
 
 const Index = () => {
-  const [language, setLanguage] = useState<Language>("en");
+  const [language, setLanguage] = useState<Language>("ar");
   const t = content[language];
   const isRTL = language === "ar";
 
