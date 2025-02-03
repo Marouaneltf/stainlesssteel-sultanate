@@ -43,7 +43,7 @@ const Index = () => {
             </div>
           </div>
         </section>
-        
+
         {/* Products Section */}
         <section className="py-20 px-4 md:px-6 lg:px-8 bg-white">
           <div className="container mx-auto max-w-7xl">
@@ -86,6 +86,19 @@ const Index = () => {
                   {...section}
                   rtl={isRTL}
                   className={index % 2 === 0 ? "" : "bg-white"}
+                  popupContent={{
+                    title: section.title,
+                    sections: [
+                      {
+                        heading: isRTL ? "نظرة عامة" : "Overview",
+                        content: section.description
+                      },
+                      {
+                        heading: isRTL ? "المميزات والفوائد" : "Features & Benefits",
+                        content: section.benefits.join("\n\n")
+                      }
+                    ]
+                  }}
                 />
               ))}
             </div>
